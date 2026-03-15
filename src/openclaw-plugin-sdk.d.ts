@@ -207,7 +207,8 @@ declare module "openclaw/plugin-sdk" {
    * 目标解析器
    */
   export interface TargetResolver {
-    looksLikeId?: (id: string) => boolean;
+    // looksLikeId?: (id: string) => boolean;
+    looksLikeId?: (id: string, normalized?: string) => boolean;
     hint?: string;
   }
 
@@ -215,7 +216,8 @@ declare module "openclaw/plugin-sdk" {
    * 频道插件 Messaging 接口
    */
   export interface ChannelPluginMessaging {
-    normalizeTarget?: (target: string) => NormalizeTargetResult;
+    // normalizeTarget?: (target: string) => NormalizeTargetResult;
+    normalizeTarget?: (target: string) => string | undefined;
     targetResolver?: TargetResolver;
     [key: string]: unknown;
   }
